@@ -1,0 +1,308 @@
+Fonts
+:root {
+  /* --default-font: "Roboto", "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+    --default-font: "Roboto";
+    --heading-font: "Noto Sans", "Noto Sans";
+    --nav-font: "Poppins", sans-serif;
+}
+
+/* Global Colors */
+:root {
+    --background-color: #ffffff;
+    /* Background color for the entire website, including individual sections */
+    --default-color: #000000;
+    /* Default color used for the majority of the text content across the entire website */
+    --heading-color: #ffffff;
+    /* Color for headings, subheadings and title throughout the website */
+    --accent-color: #1b7f15;
+    /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    --surface-color: #ffffff;
+    /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+    --contrast-color: #ffffff;
+    /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+
+/*  Nav Menu Colors  */
+
+    --nav-color: #5e5e5e;
+    /* The default color of the main navmenu links */
+    --nav-hover-color: #1b7f15;
+    /* Applied to main navmenu links when they are hovered over or active */
+    --nav-mobile-background-color: #ffffff;
+    /* Used as the background color for mobile navigation menu */
+    --nav-dropdown-background-color: #ffffff;
+    /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+    --nav-dropdown-color: #000000;
+    /* Used for navigation links of the dropdown items in the navigation menu. */
+    --nav-dropdown-hover-color: #1b7f15;
+    /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* Smooth scroll */
+:root {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--default-color);
+    background-color: var(--default-color);
+    font-family: var(--default-font);
+    background: rgb(215,169,128);
+    position: relative;
+    background: var(--background-color);
+}
+
+.vc-image-1 img {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% !important;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: color-mix(in srgb, var(--accent-color), transparent 25%);
+    text-decoration: none;
+}
+
+
+
+  /*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+    width: auto;
+    min-height: 100vh;
+    position: relative;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .about {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+#bgImag {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    /* overflow-y: auto; */
+    object-fit: fill;
+    z-index: -2;
+  }
+  
+  .hero:before {
+    content: "";
+    /* background: color-mix(in srgb, var(--background-color), transparent 30%); */
+    position: relative;
+    inset: 0;
+    z-index: 2;
+  }
+  
+  .hero .container {
+    z-index: 3;
+  }
+  
+  .hero h2 {
+    margin: 0;
+    font-size: 64px;
+    font-weight: 700;
+    color: #000000;
+  }
+  
+  .hero p {
+    margin: 5px 0 0 0;
+    font-size: 26px;
+  }
+  .hero #changingPara {
+    margin: 5px 0 0 0;
+    font-size: 26px;
+    font-weight: 500;
+  }
+  
+  .hero .image-container {
+    position: relative;
+    text-align: center; /* Center the image */
+    top: -120px; /* Add spacing above the image */
+    float: right;
+    right: 100px;
+}
+
+.hero .custom-image {
+    width: 200px; /* Adjust the width as per your needs */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+}
+
+  .hero p span {
+    letter-spacing: 1px;
+    /* border-bottom: 2px solid var(--accent-color); */
+  }
+  
+  .hero .social-links,.contact .social-links {
+    margin-top: 25px;
+  }
+  
+  .hero .social-links a,.contact .social-links a {
+    font-size: 20px;
+    display: inline-block;
+    color: color-mix(in srgb, rgb(24, 24, 24),transparent 30%);
+    line-height: 1;
+    transition: 0.3s;
+  }
+  
+  .hero .social-links a:hover,.contact .social-links a:hover {
+    color: var(--accent-color);
+  }
+  
+  @media (max-width: 768px) {
+    .hero h2 {
+      color: #000000;
+      font-size: 32px;
+    }
+  
+    .hero p {
+      font-size: 20px;
+    }
+  }
+
+  .hero #inTro_Para{
+    padding-top: 5px;
+    font-size: 16px;
+    color: rgb(24, 24, 24);
+    opacity: 0.9;
+    word-spacing: 3px;
+    text-align: justify;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  color: #1b7f15;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 160px;
+  height: 1px;
+  background: color-mix(in srgb,#1b7f15, transparent 60%);
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  margin: auto;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 3px;
+  background:#1b7f15;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.section-title p {
+  margin-bottom: 0;
+  color: #ffffff;
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about .content h2 {
+  font-weight: 700;
+  font-size: 24px;
+  color: #1b7f15;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.about .content ul strong {
+  margin-right: 10px;
+}
+
+
+.about .content ul i {
+  font-size: 16px;
+  margin-right: 5px;
+  line-height: 0;
+}
+#education {
+  height: auto;
+  padding-bottom: 10%;
+  /* overflow: hidden; */
+}
+
+
+.vertical-line {
+  width: 4px;
+  height: 100%;
+  background-color: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  z-index: -20;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #1b7f15;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.projDetails {
+  text-align: left;
+  font-style: italic;
+  width: 100%;
+  padding: 10px;
+}
+
+.projDetails span {
+  display: block;
+  text-align: left;
+  width: 100%;
+}
+
+
