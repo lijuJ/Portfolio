@@ -48,6 +48,7 @@ body {
     font-family: var(--default-font);
     background: rgb(215,169,128);
     position: relative;
+    overflow-x:hidden;
     background: var(--background-color);
 }
 
@@ -73,7 +74,7 @@ a:hover {
 --------------------------------------------------------------*/
 .hero {
     width: auto;
-    min-height: 100vh;
+    height: auto;
     position: relative;
     padding: 50px 0;
     display: flex;
@@ -232,7 +233,7 @@ a:hover {
 
 .section-title p {
   margin-bottom: 0;
-  color: #ffffff;
+  color: #000000;
 }
 
 /*--------------------------------------------------------------
@@ -306,3 +307,21 @@ a:hover {
 }
 
 
+/* image scroll */
+.card-body {
+  overflow: hidden; /* Ensures text doesn't spill out */
+  position: relative;
+  width: 100%; /* Adjusts to card body width */
+}
+
+.scrolling-about {
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 1.2em;
+  animation: scrollText 20s linear infinite; /* Slower scrolling speed */
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(0); } /* Start from the left of the container */
+  100% { transform: translateX(-50%); } /* Move to the left until the middle of the duplicated text */
+}
