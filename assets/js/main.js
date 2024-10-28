@@ -111,4 +111,72 @@ $(document).click(function() {
 
 
 
-// -----------------------
+// -----------------------carousal
+$('.we-carousel').each(function() {
+  let currentCardIndex = 0; // Current index for the specific carousel
+  const $carousel = $(this); // Current carousel
+  const $cards = $carousel.find('.we-card'); // All cards within the current carousel
+  const totalCards = $cards.length; // Total cards in the current carousel
+
+  function updateCarousel() {
+      // Remove classes from all cards
+      $cards.removeClass('active prev-1 next-1 prev-2 next-2 prev-3 next-3');
+      // Add active class to the current card
+      $($cards[currentCardIndex]).addClass('active');
+
+      // Calculate indices for neighboring cards
+      const prevIndex_1 = (currentCardIndex - 1 + totalCards) % totalCards;
+      const nextIndex_1 = (currentCardIndex + 1) % totalCards;
+      const prevIndex_2 = (currentCardIndex - 2 + totalCards) % totalCards;
+      const nextIndex_2 = (currentCardIndex + 2) % totalCards;
+      const prevIndex_3 = (currentCardIndex - 3 + totalCards) % totalCards;
+      const nextIndex_3 = (currentCardIndex + 3) % totalCards;
+
+      // Add classes to neighboring cards
+      $($cards[prevIndex_1]).addClass('prev-1');
+      $($cards[nextIndex_1]).addClass('next-1');
+      $($cards[prevIndex_2]).addClass('prev-2');
+      $($cards[nextIndex_2]).addClass('next-2');
+      $($cards[prevIndex_3]).addClass('prev-3');
+      $($cards[nextIndex_3]).addClass('next-3');
+  }
+
+  // Initial update to set the correct card state
+  updateCarousel();
+
+  // Right arrow click event
+  $carousel.find('.right').click(function () {
+      currentCardIndex = (currentCardIndex + 1) % totalCards; // Increment index
+      updateCarousel(); // Update carousel display
+  });
+
+  // Left arrow click event
+  $carousel.find('.left').click(function () {
+      currentCardIndex = (currentCardIndex - 1 + totalCards) % totalCards; // Decrement index
+      updateCarousel(); // Update carousel display
+  });
+});
+// to popup if card get clicked 
+function openModal(card) {
+
+  const img = card.querySelector("img");
+  const header = card.querySelector("h5");
+  const paragraph = card.querySelector("p");
+
+  if (img && header && paragraph) {
+      // Populate the modal content with the card's data
+      document.getElementById("modalImg").src = img.src;
+      document.getElementById("modalHeader").textContent = header.textContent;
+      document.getElementById("modalParagraph").textContent = paragraph.textContent;
+
+      // Show the Bootstrap modal
+      const imgModal = new bootstrap.Modal(document.getElementById("imgModal"));
+      imgModal.show();
+  } else {
+      console.error("Could not find expected elements in the card.");
+  }
+}
+
+
+
+// 
