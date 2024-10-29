@@ -92,23 +92,6 @@ function navmenuScrollspy() {
 }
 window.addEventListener('load', navmenuScrollspy);
 document.addEventListener('scroll', navmenuScrollspy);
-// Contact cards
-$('.suBCards').click(function(event) {
-  event.stopPropagation(); 
-
- 
-  $('.suBCards .card-body').slideUp(); 
-  $('.suBCards').removeClass('active');
-
-  $(this).find('.card-body').slideToggle();
-  $(this).toggleClass('active');
-});
-
-$(document).click(function() {
-  $('.suBCards .card-body').slideUp();
-  $('.suBCards').removeClass('active');
-});
-
 
 
 // -----------------------carousal
