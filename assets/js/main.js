@@ -162,4 +162,32 @@ function openModal(card) {
 
 
 
-// 
+// for mail
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the form from redirecting
+
+  const formData = new FormData(this);
+
+  fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+          // Show Bootstrap toast with a 2-second delay
+          const toastElement = document.getElementById("successToast");
+          const toast = new bootstrap.Toast(toastElement, { delay: 2000 }); // Set delay to 2 seconds
+          toast.show();
+          
+          // Clear the form fields
+          this.reset();
+      } else {
+          alert("An error occurred. Please try again.");
+      }
+  })
+  .catch(error => {
+      console.error("Error:", error);
+      alert("An error occurred. Please try again.");
+  });
+});
