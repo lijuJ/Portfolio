@@ -35,7 +35,7 @@ navLinks.forEach(link => {
 
 //for text below name animation
 
-const typedItems = ["Web Application Developer.", "Software Developer."];
+const typedItems = ["Software Engineer.", "Software Developer."];
   
 let currentIndex = 0;  
 let charIndex = 0;     
